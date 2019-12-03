@@ -1,12 +1,29 @@
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
-Guitar.destroy_all
-Pick.destroy_all
+System.destroy_all
+Planet.destroy_all
+Explorer.destroy_all
+Visit.destroy_all
 
+sol = System.create(name: "Solar System")
 
-Guitar.create(wood: "balsa", string_count: 3, pickup_count: 4)
-Guitar.create(wood: "pine", string_count: 6, pickup_count: 1)
+planets_info = {
+  "earth" => "rock",
+  "mercury" => "rock",
+  "venus" => "gas"
+}
 
-Pick.create(brand: "Dunlop", size: ".78mm", guitar_id: Guitar.ids.sample)
-Pick.create(brand: "Dunlop", size: ".75mm", guitar_id: Guitar.ids.sample)
-Pick.create(brand: "Indigo Girls", size: "1.0mm", guitar_id: Guitar.ids.sample)
+planets_info.each do |k, v|
+  Planet.create(system:sol, name: k, material: v)
+end
+
+neptune = Planet.create(system:sol, name: "Neptune", material: "gas")
+
+groot = Explorer.create(name: "Groot", age: 1000, vice: "sullen narcissism")
+rocket = Explorer.create(name: "Rocket", age: 8, vice: "pica")
+
+explorers = [groot,rocket]
+
+explorers.each do |e|
+  Visit.create(explorer: e, planet: neptune)
+end

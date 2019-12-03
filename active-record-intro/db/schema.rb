@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_211815) do
+ActiveRecord::Schema.define(version: 2019_12_03_201706) do
+
+  create_table "explorers", force: :cascade do |t|
+    t.string "name"
+    t.string "vice"
+    t.integer "age"
+  end
 
   create_table "guitars", force: :cascade do |t|
     t.string "wood"
@@ -22,6 +28,21 @@ ActiveRecord::Schema.define(version: 2019_11_27_211815) do
     t.string "brand"
     t.string "size"
     t.integer "guitar_id"
+  end
+
+  create_table "planets", force: :cascade do |t|
+    t.string "name"
+    t.string "material"
+    t.integer "system_id"
+  end
+
+  create_table "systems", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "visits", force: :cascade do |t|
+    t.integer "planet_id"
+    t.integer "explorer_id"
   end
 
 end
