@@ -1,0 +1,14 @@
+<%# List names of all whales
+List sizes with names
+In-site link to individual whale when clicked
+Offsite link to wiki search "whale [species]"
+List whale species (detail?)
+List locations (detail?) %>
+
+<ul>
+<% @whales.each do |whale| %>
+  <li><a href="/whales/<%= whale.id %>"><%= whale.name %> is <%= whale.size %> microwhales long</a></li>
+<% end %>
+</ul>
+
+<a href="/whales/new">Create a new whale</a>
