@@ -1,0 +1,10 @@
+<%# form needs to go to create route post "/whales" with name.size.species info %>
+
+<h1>MAKE A WHALE!</h1>
+
+<form class="whale-form" action="/whales" method="post">
+  Name: <input type="text" name="name" placeholder="e.g. Willy">
+  Size: <input type="number" name="size" placeholder="e.g. 5000">
+  Species: <input type="text" name="species" placeholder="e.g. Humpback">
+  <input type="submit" value="Create Whale">
+</form>

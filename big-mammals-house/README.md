@@ -1,3 +1,13 @@
+🐋index - all whales
+🐳show - one whale
+🐋new - form for whale
+🐳create - submit form, whale to DB
+
+
+## Three ways to send params
+1) Query string at end of url (after ? mark, k=v&k2=v2)
+2) Code a wildcard e.g. :id into a controller route
+3) Form input
 
 # Sinatra and MVC
 
