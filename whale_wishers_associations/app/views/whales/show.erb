@@ -1,0 +1,9 @@
+<h1>Hi! I'm <%= @whale.name.capitalize %>.</h1>
+
+<h3>Wishes made for me: (so thankful!)</h3>
+<ul id="whale-wishes-list">
+  <% @whale.wishes.each do |wish| %>
+    <li><a href="/wishes/<%= wish.id %>"><%= wish.title %></a></li>
+    <br>
+  <% end %>
+</ul>

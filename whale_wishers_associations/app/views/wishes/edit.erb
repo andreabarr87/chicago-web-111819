@@ -1,0 +1,8 @@
+<h1>Edit your wish! </h1>
+
+<form class="wish-edit" action="/wishes/<%= @wish.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="wish[title]" value="<%= @wish.title %>">
+  <input type="text" name="wish[whale_id]">
+  <input type="submit" value="Update Wish">
+</form>
