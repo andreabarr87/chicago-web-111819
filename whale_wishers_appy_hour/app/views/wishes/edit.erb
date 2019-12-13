@@ -1,0 +1,15 @@
+<h1>Edit your wish! </h1>
+
+<form class="wish-edit" action="/wishes/<%= @wish.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="wish-title">Title:</label>
+  <input id="wish-title" type="text" name="wish[title]" value="<%= @wish.title %>">
+
+  <label for="wish-whale-id">Whale:</label>
+  <select id="wish-whale-id" name="wish[whale_id]">
+    <% @whales.each do |whale| %>
+      <option value="<%= whale.id %>"><%= whale.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Update Wish">
+</form>

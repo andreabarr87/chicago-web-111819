@@ -1,0 +1,36 @@
+<h1>Hi! I'm <%= @whale.name.capitalize %>.</h1>
+
+<img id="whale-show-image" src="/images/<%= @whale.image_url %>" alt="picture of a whale representing <%= @whale.name %>">
+
+<h2>I'm a <%= @whale.species %> whale and I'm <%= @whale.size %> microwhales long.</h2>
+<p><em>That's pretty big! I am a whale!</em></p>
+
+<h3>Wishes other whales made for me (I'm so thankful!):</h3>
+
+<ul id="whale-wishes-list">
+  <% @whale.received_wishes.each do |wish| %>
+    <li>
+      <a style="font-size: <%= wish.wisher.display_font_size %>rem;" href="/wishes/<%= wish.id %>"><%= wish.truncated_title %></a>
+      <a href="/whales/<%= wish.wisher.id %>">
+        (from <img class="whale-avatar-icon" src="/images/<%= wish.wisher.image_url %>" alt="avatar image for whale named <%= wish.wisher.name %>">)
+      </a>
+    </li>
+    <br>
+  <% end %>
+</ul>
+
+<img class="divider-bar" src="/images/divider-bar.png" alt="a wavy divider bar going across the page">
+
+<h3>Wishes I've made to other whales:</h3>
+
+<ul id="whale-wishes-list">
+  <% @whale.written_wishes.each do |wish| %>
+    <li>
+      <a href="/wishes/<%= wish.id %>"><%= wish.truncated_title %></a>
+      <a href="/whales/<%= wish.whale.id %>">
+        (sent to <img class="whale-avatar-icon" src="/images/<%= wish.whale.image_url %>" alt="avatar image for whale named <%= wish.whale.name %>">)
+      </a>
+    </li>
+    <br>
+  <% end %>
+</ul>
