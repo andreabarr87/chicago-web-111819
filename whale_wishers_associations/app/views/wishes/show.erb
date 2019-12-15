@@ -1,0 +1,11 @@
+
+
+<h1>This is a wish with ID <%= @wish.id %></h1>
+
+<h2>The title of the wish is: "<%= @wish.title %>"</h2>
+
+<h3>This wish was made for <a href="/whales/<%= @wish.whale.id %>"><%= @wish.whale.name %></a>, a <%= @wish.whale.size %> microwhale-long member of the "<%= @wish.whale.species %>" species.</h3>
+
+
+
+<a href="/wishes/<%= @wish.id %>/edit">Edit this Wish!</a>

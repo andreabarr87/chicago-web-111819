@@ -1,0 +1,14 @@
+<h1>Meet the Whales:</h1>
+
+<div class="whales-container">
+  <ul>
+
+    <% @whales.each do |whale| %>
+      <li class="whale-item">
+        <p><a href="/whales/<%= whale.id %>"><%= whale.name %></a> - <%= whale.species.capitalize %> whale, <%= whale.size %> microwhales long</p>
+      </li>
+    <% end %>
+  </ul>
+
+  <a href="/whales/new">Water's Fine! Create a Whale Here</a>
+</div>

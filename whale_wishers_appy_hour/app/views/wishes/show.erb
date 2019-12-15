@@ -1,0 +1,6 @@
+
+<h1 class="big-wish">"<%= @wish.title %>"</h1>
+
+<p>This is a wish from <a href="/whales/<%= @wish.wisher.id %>"><%= @wish.wisher.name %></a> to <a href="/whales/<%= @wish.whale.id %>"><%= @wish.whale.name %></a></p>
+
+<a href="/wishes/<%= @wish.id %>/edit">Edit this Wish!</a>

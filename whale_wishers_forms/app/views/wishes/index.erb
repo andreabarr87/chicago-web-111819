@@ -1,0 +1,7 @@
+<h1>All Wishes</h1>
+
+<% @wishes.each do |wish| %>
+  <p><%= wish.title %></p>
+<% end %>
+
+<a href="/wishes/new">Create new Wish</a>

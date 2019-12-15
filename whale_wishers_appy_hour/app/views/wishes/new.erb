@@ -1,0 +1,15 @@
+<h1>Make New Wish</h1>
+
+<form class="wish-form" action="/wishes" method="post">
+  <label for="wish-title">Name</label>
+  <input id="wish-title" type="text" name="wish[title]" placeholder="e.g. long life">
+
+  <label for="wish-whale-id">Whale:</label>
+  <select id="wish-whale-id" name="wish[whale_id]">
+    <% @whales.each do |whale| %>
+      <option value="<%= whale.id %>"><%= whale.name %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Create Wish">
+</form>
