@@ -1,0 +1,5 @@
+<h1>Edit <%= @student.name %></h1>
+
+<%= render "form", student: @student, cohorts: @cohorts %>
+
+<%= link_to "Back to #{@student.name}", student_path(@student) %>

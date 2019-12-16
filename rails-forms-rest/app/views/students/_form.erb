@@ -1,0 +1,7 @@
+<%= form_with model: student do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :cohort %>
+  <%= f.collection_select(:cohort_id, cohorts, :id, :name) %>
+  <%= f.submit %>
+<% end %>
