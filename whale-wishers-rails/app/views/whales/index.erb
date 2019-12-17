@@ -1,0 +1,7 @@
+<h1>All of the Whales!</h1>
+
+<% @whales.each do |whale| %>
+  <%= link_to whale.name, whale %>
+<% end %>
+
+<%= link_to "Create New Whale", new_whale_path %>

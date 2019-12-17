@@ -1,0 +1,18 @@
+<h1>Create a Whale!</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p style="color: red;"><%= error %></p>
+  <%  end %>
+<% end %>
+
+<%= form_with model: @whale, remote: false do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, value: flash[:name] %>
+  <%= f.label :size %>
+  <%= f.number_field :size, value: flash[:size] %>
+  <%= f.label :species %>
+  <%= f.text_field :species, value: flash[:species] %>
+  <%= f.submit %>
+
+<% end %>
