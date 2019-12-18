@@ -1,0 +1,21 @@
+<!-- <form class="student-form" action="/students" method="post">
+  <%= csrf_meta_tags %>
+  <label>Name</label>
+  <input type="text" name="student[name]">
+  <input type="submit" value="Create Student">
+</form> -->
+
+<!-- <%= form_tag('/students') do %>
+  <%= label_tag "Name" %>
+  <%= text_field_tag "student[name]" %>
+  <%= label_tag "Cohort" %>
+  <%= select_tag "student[cohort_id]", options_from_collection_for_select(@cohorts, "id", "name") %>
+  <%= submit_tag "Create Student" %>
+<% end %> -->
+
+<%# ---------------- OUT WITH THE OLD, IN WITH THE NEW!!! ----------------- %>
+<h1>Create new Student</h1>
+
+<%= render "form", student: @student, cohorts: @cohorts %>
+
+<%= link_to "Back to Students", students_path %>

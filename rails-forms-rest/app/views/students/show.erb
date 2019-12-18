@@ -1,0 +1,7 @@
+<h1><%= @student.name %></h1>
+
+<h3>I belong to the <%= @student.cohort.name %> cohort!</h3>
+
+<%= link_to "Edit me", edit_student_path %>
+
+<%= link_to "Delete me", student_path(@student), method: :delete, data: { confirm: "Really?"} %>
