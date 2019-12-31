@@ -1,0 +1,12 @@
+<h1>Meet "<%= @employee.alias %>"</h1>
+
+<% if @employee.img_url.length > 0 %>
+  <%= image_tag(@employee.img_url, :alt => "picture of #{@employee.full_name} from The Office on NBC") %>
+<% end %>
+
+<h3><%= @employee.full_name %></h3>
+<p><%= @employee.title %> at <%= @employee.office %></p>
+
+<p>Currently owns the dog known as <%= link_to @employee.dog.name, @employee.dog %>.</p>
+
+<%= link_to "Back to Employees", employees_path %>
